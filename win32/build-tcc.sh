@@ -25,12 +25,9 @@ eval "$CC $target tools/tiny_libmaker.c -o tiny_libmaker.exe"
 
 #libtcc
 mkdir -p libtcc
-if [ ! -f "libtcc/libtcc.h" ]; then
-	cp ../libtcc.h libtcc/libtcc.h
-fi
+cp ../libtcc.h libtcc/libtcc.h
 
 eval "$CC $target -shared -DLIBTCC_AS_DLL -DONE_SOURCE ../libtcc.c -o libtcc.dll -Wl,-out-implib,libtcc/libtcc.a"
-
 eval "./tiny_impdef libtcc.dll -o libtcc/libtcc.def"
 
 #tcc
