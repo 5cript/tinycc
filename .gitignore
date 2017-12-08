@@ -69,4 +69,6 @@ tiny_libmaker
 *~
 \#*
 .#*
-win32/*
+win32/include/*
+win32/libtcc/*
+win32/*.dll
